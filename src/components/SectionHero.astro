@@ -1,0 +1,14 @@
+---
+const { eyebrow, title, lead, primaryLabel = 'WhatsApp Navvi', primaryHref = 'https://wa.me/919894466715' } = Astro.props;
+---
+<section class="page-hero visual-band">
+  <div class="container page-hero-entrance">
+    <p class="eyebrow">{eyebrow}</p>
+    <h1>{title}</h1>
+    <p class="lead">{lead}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href={primaryHref}>{primaryLabel}</a>
+      <slot />
+    </div>
+  </div>
+</section>

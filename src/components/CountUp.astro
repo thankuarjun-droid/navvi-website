@@ -1,0 +1,13 @@
+---
+const { value, prefix = '', suffix = '', decimals, class: className = '' } = Astro.props;
+const numeric = parseFloat(String(value));
+const dec = decimals ?? (String(numeric).includes('.') ? 1 : 0);
+const display = `${prefix}${value}${suffix}`;
+---
+<strong
+  class={className}
+  data-count={numeric}
+  data-prefix={prefix}
+  data-suffix={suffix}
+  data-decimals={dec}
+>{display}</strong>

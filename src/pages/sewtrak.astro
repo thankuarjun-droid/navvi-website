@@ -1,0 +1,116 @@
+---
+import PageLayout from '../components/Layout.astro';
+import SectionHero from '../components/SectionHero.astro';
+import ScreenshotGallery from '../components/ScreenshotGallery.astro';
+
+const screens = [
+  {
+    src: '/assets/sewtrak/dashboard.png',
+    label: 'Factory dashboard',
+    caption: 'Active orders, lines running, production flow and daily control view for owners and managers.',
+    category: 'Overview'
+  },
+  {
+    src: '/assets/sewtrak/kpis.png',
+    label: 'Performance KPIs',
+    caption: 'Planned vs actual output, efficiency, RFT, absenteeism, plan adherence and OTIF in one screen.',
+    category: 'Production'
+  },
+  {
+    src: '/assets/sewtrak/operation-bulletin.png',
+    label: 'Operation bulletin',
+    caption: 'SAM, manpower need, machine, attachment, skill and operation sequence for each style.',
+    category: 'Planning'
+  },
+  {
+    src: '/assets/sewtrak/order-closing.png',
+    label: 'Order closing',
+    caption: 'Short/excess, dispatch readiness and OTIF control before delivery risk escalates.',
+    category: 'Orders'
+  },
+  {
+    src: '/assets/sewtrak/hris.png',
+    label: 'HRIS & workforce',
+    caption: 'Headcount, attendance, attrition, operator strength and labour cost visibility connected to production.',
+    category: 'HR'
+  },
+  {
+    src: '/assets/sewtrak/roles-access.png',
+    label: 'Roles & access',
+    caption: 'Separate permissions for admin, planner, supervisor, IE, production manager, quality, HR and viewer.',
+    category: 'Security'
+  }
+];
+---
+<PageLayout title="SewTrak | Garment Resource Planner and Production Tracker" description="SewTrak is Navvi's garment resource planner and production tracker for planning, live production, WIP, OTIF, HRIS, KPIs and order closing.">
+  <main>
+    <SectionHero
+      eyebrow="SewTrak"
+      title="Garment resource planning and production tracking in one factory workspace."
+      lead="Plan styles, load lines, track live output, monitor HRIS, close orders and see performance KPIs without waiting for end-of-day reports."
+      primaryLabel="Book SewTrak demo"
+      primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20SewTrak%20demo."
+    >
+      <a class="btn btn-outline" href="#screens">See screens</a>
+    </SectionHero>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">What SewTrak controls</p>
+          <h2>From order plan to final dispatch.</h2>
+          <p class="muted">SewTrak is built around the way garment factories actually work: orders, styles, operations, lines, operators, WIP, dispatch and OTIF.</p>
+        </div>
+        <div class="grid-3" data-reveal-group>
+          <article class="card" data-reveal><h3>Production planning</h3><p class="muted">Manufacturing orders, capacity, Gantt, line loading, route and style changeover readiness.</p></article>
+          <article class="card" data-reveal><h3>Live tracking</h3><p class="muted">Hourly board, line board, operator output, transfer and WIP, production entry and alerts.</p></article>
+          <article class="card" data-reveal><h3>Performance KPIs</h3><p class="muted">Planned vs actual output, efficiency, RFT, absenteeism, plan adherence, cost per piece and OTIF.</p></article>
+          <article class="card" data-reveal><h3>Operation bulletin</h3><p class="muted">SAM, manpower needed, machine, attachment, skill and operation sequence for each style.</p></article>
+          <article class="card" data-reveal><h3>Workforce and HRIS</h3><p class="muted">Headcount, operator strength, attendance, attrition, machine-man ratio and labour cost per piece.</p></article>
+          <article class="card" data-reveal><h3>Roles and access</h3><p class="muted">Separate access for tenant admin, planner, supervisor, IE, production manager, quality, HR and viewer.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue visual-band" id="screens">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Product proof</p>
+          <h2>SewTrak is ready to demo.</h2>
+          <p class="muted">Browse all six working screens from the demo workspace. Filter by module or click any thumbnail to inspect the full view.</p>
+        </div>
+        <ScreenshotGallery screens={screens} />
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div data-reveal>
+          <p class="eyebrow">For decision-makers</p>
+          <h2>See the day before the day is over.</h2>
+          <p class="muted">SewTrak gives owners and managers a common view of production flow, delivery risk, line efficiency and people availability. It turns factory data into action.</p>
+        </div>
+        <div class="card card-featured" data-reveal>
+          <h3>Demo focus areas</h3>
+          <ul class="list">
+            <li>How a style is created with OB, SAM and manpower.</li>
+            <li>How production entry updates KPIs and reports.</li>
+            <li>How HRIS connects absenteeism to output and cost.</li>
+            <li>How roles and access protect factory data.</li>
+            <li>How OTIF and order closing show delivery risk.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-tight">
+      <div class="container cta-panel" data-reveal>
+        <div>
+          <h2>Book a SewTrak demo.</h2>
+          <p>We will show the planner, production tracker and dashboard flow using a demo factory workspace.</p>
+        </div>
+        <a class="btn btn-secondary" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20SewTrak%20demo.">Request demo</a>
+      </div>
+    </section>
+  </main>
+</PageLayout>

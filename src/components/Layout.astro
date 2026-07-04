@@ -1,0 +1,70 @@
+---
+const {
+  title = 'Navvi Corporations',
+  description = 'Factory transformation, SewCoach training and SewTrak production tracking for garment manufacturers.',
+  ogImage = '/assets/brand/navvi-wordmark-horizontal.png'
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/brand/navvi-mark-circle.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL(ogImage, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="/"><img src="/assets/brand/navvi-wordmark-horizontal.png" alt="Navvi Corporations" /></a>
+        <button class="nav-toggle" data-nav-toggle aria-expanded="false" aria-label="Toggle menu">Menu</button>
+        <nav class="nav-links" data-nav-links>
+          <a href="/factory-transformation/">Factory Transformation</a>
+          <a href="/sewcoach/">SewCoach</a>
+          <a href="/sewtrak/">SewTrak</a>
+          <a href="/case-results/">Results</a>
+          <a href="/blog/">Blog</a>
+          <a href="/contact/">Contact</a>
+          <a class="btn btn-primary" data-booking-link href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20discussion.">Book Assessment</a>
+        </nav>
+      </div>
+    </header>
+    <slot />
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <img class="footer-logo" src="/assets/brand/navvi-wordmark-horizontal.png" alt="Navvi Corporations" />
+          <p>Cut waste. Build systems. Boost profits.</p>
+        </div>
+        <div class="footer-links">
+          <strong>Solutions</strong>
+          <a href="/factory-transformation/">Factory Transformation</a>
+          <a href="/sewcoach/">SewCoach</a>
+          <a href="/sewtrak/">SewTrak</a>
+          <a href="/blog/">Blog</a>
+        </div>
+        <div class="footer-links">
+          <strong>Contact</strong>
+          <a href="tel:+919894466715">+91 98944 66715</a>
+          <a href="mailto:navvocorp@gmail.com">navvocorp@gmail.com</a>
+          <a href="/contact/">Book assessment</a>
+        </div>
+      </div>
+      <div class="container copyright">© 2026 Navvi Corporations. Client names shared only during in-person discussion after permission.</div>
+    </footer>
+    <a class="btn btn-primary floating-whatsapp" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20am%20interested%20in%20your%20factory%20solutions.">WhatsApp</a>
+    <script is:inline src="/script.js"></script>
+    <script is:inline src="/animations.js"></script>
+  </body>
+</html>

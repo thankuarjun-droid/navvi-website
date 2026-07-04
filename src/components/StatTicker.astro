@@ -1,0 +1,16 @@
+---
+const stats = [
+  ['₹8.5 Cr', 'Average annual savings'],
+  ['90 days', 'Initial transformation window'],
+  ['1,800+', 'Operators trained'],
+  ['40%+', 'SewCoach Day 8 target']
+];
+---
+<div class="stat-ticker">
+  {stats.map(([value, label]) => (
+    <div class="ticker-item">
+      <strong>{value}</strong>
+      <span>{label}</span>
+    </div>
+  ))}
+</div>

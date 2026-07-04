@@ -1,0 +1,59 @@
+---
+interface Screen {
+  src: string;
+  label: string;
+  caption: string;
+  category: string;
+}
+
+const { screens } = Astro.props as { screens: Screen[] };
+const categories = [...new Set(screens.map((s) => s.category))];
+const defaultScreen = screens[0];
+---
+<div class="screenshot-gallery" data-screenshot-gallery>
+  <div class="gallery-viewer" data-reveal>
+    <div class="gallery-main media-frame">
+      <img
+        data-gallery-main
+        src={defaultScreen.src}
+        alt={defaultScreen.caption}
+      />
+    </div>
+    <div class="gallery-meta">
+      <span class="gallery-category" data-gallery-category>{defaultScreen.category}</span>
+      <strong data-gallery-label>{defaultScreen.label}</strong>
+      <p class="muted" data-gallery-caption>{defaultScreen.caption}</p>
+    </div>
+  </div>
+
+  <div class="gallery-sidebar" data-reveal>
+    <div class="gallery-tabs" role="tablist" aria-label="Screenshot categories">
+      <button type="button" class="gallery-tab is-active" data-gallery-filter="all" role="tab" aria-selected="true">All screens</button>
+      {categories.map((category) => (
+        <button type="button" class="gallery-tab" data-gallery-filter={category} role="tab" aria-selected="false">{category}</button>
+      ))}
+    </div>
+
+    <div class="gallery-thumbs" data-reveal-group>
+      {screens.map((screen, index) => (
+        <button
+          type="button"
+          class={`gallery-thumb ${index === 0 ? 'is-active' : ''}`}
+          data-gallery-src={screen.src}
+          data-gallery-alt={screen.caption}
+          data-gallery-label={screen.label}
+          data-gallery-caption={screen.caption}
+          data-gallery-category={screen.category}
+          data-gallery-category-filter={screen.category}
+          data-reveal
+        >
+          <div class="gallery-thumb-frame">
+            <img src={screen.src} alt="" loading="lazy" />
+          </div>
+          <span class="gallery-thumb-label">{screen.label}</span>
+          <span class="gallery-thumb-kicker">{screen.category}</span>
+        </button>
+      ))}
+    </div>
+  </div>
+</div>

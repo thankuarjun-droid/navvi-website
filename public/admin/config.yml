@@ -1,0 +1,26 @@
+backend:
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_NAVVI_REPO
+  branch: main
+
+local_backend: true
+media_folder: "public/assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog Posts"
+    folder: "src/content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publish Date", name: "publishDate", widget: "datetime", format: "YYYY-MM-DD" }
+      - { label: "Category", name: "category", widget: "select", options: ["Profit leaks", "SewCoach", "SewTrak", "Quality", "Efficiency", "HR"] }
+      - { label: "Featured", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Cover Image", name: "image", widget: "image", required: false }
+      - { label: "Read Time", name: "readTime", widget: "string", required: false, hint: "Example: 7 min read" }
+      - { label: "Body", name: "body", widget: "markdown" }

@@ -1,0 +1,59 @@
+---
+import Layout from '../../components/Layout.astro';
+import SectionHero from '../../components/SectionHero.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog')).sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+---
+<Layout title="Navvi Blog | Factory Improvement Notes" description="Practical factory improvement articles for garment manufacturers on quality, efficiency, training, tracking and profit leaks.">
+  <main>
+    <SectionHero eyebrow="Factory improvement notes" title="Practical ideas for garment factory owners." lead="Detailed guides on daily control, training systems, live tracking, quality and cash discipline." />
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Latest posts</p>
+          <h2>Read before the morning review.</h2>
+          <p class="muted">Each article is written for owners, production heads and managers who need action — not theory.</p>
+        </div>
+        <div class="blog-grid" data-reveal-group>
+          {posts.map((post) => (
+            <article class={`blog-card card ${post.data.featured ? 'card-featured' : ''}`} data-reveal>
+              {post.data.image && (
+                <a class="blog-card-image media-frame" href={`/blog/${post.slug}/`}>
+                  <img src={post.data.image} alt="" loading="lazy" />
+                </a>
+              )}
+              <div class="blog-card-body">
+                <span class="kicker">{post.data.category}</span>
+                <h3><a href={`/blog/${post.slug}/`}>{post.data.title}</a></h3>
+                <p class="muted">{post.data.description}</p>
+                <div class="blog-card-meta">
+                  <span>{post.data.publishDate.toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
+                  {post.data.readTime && <span>{post.data.readTime}</span>}
+                </div>
+                <p><a class="btn btn-outline" href={`/blog/${post.slug}/`}>Read article</a></p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+    <section class="section section-blue visual-band">
+      <div class="container split">
+        <div data-reveal>
+          <p class="eyebrow">Editor workflow</p>
+          <h2>Post from the CMS.</h2>
+          <p class="muted">After GitHub and Hostinger deployment are connected, open /admin, write a blog post, save it, and the site rebuild will publish it.</p>
+        </div>
+        <div class="card daily-template" data-reveal>
+          <h3>Article format</h3>
+          <ul class="list">
+            <li>Problem: one shop-floor pain.</li>
+            <li>Numbers: KPIs to track.</li>
+            <li>Actions: practical steps.</li>
+            <li>CTA: invite a WhatsApp discussion.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>
