@@ -1,14 +1,116 @@
 ---
 import Layout from '../components/Layout.astro';
 import SectionHero from '../components/SectionHero.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faq = [
+  { q: 'How fast can a new operator become line-ready?', a: 'The GPOT track targets line-ready performance in 8 days for eligible trainees, with cycle timing and skill gates — not open-ended classroom time.' },
+  { q: 'Do you certify our internal trainers?', a: 'Yes. The 15-day ToT program builds certified factory trainers so the system continues without Navvi on the floor every day.' },
+  { q: 'What is included in setup?', a: 'Training room structure, courses, LMS content, SewCoach app tracking, OJT design and certification flow.' },
+  { q: 'Can SewCoach run without full transformation?', a: 'Yes. Many factories start with SewCoach when hiring and training delay is the main leak.' }
+];
 ---
-<Layout title="SewCoach | Sewing Operator Training School Setup">
+<Layout title="SewCoach | Sewing Operator Training School Setup" description="Make new sewing operators line-ready in 8 days with SewCoach: training room setup, ToT, GPOT, LMS, OJT tracking and certification.">
   <main>
-    <SectionHero eyebrow="SewCoach by Navvi" title="Make new sewing operators line-ready in 8 days." lead="Set up a scientific training room with certified trainers, ready-made courses, app-based tracking, OJT and certification." primaryLabel="WhatsApp SEWCOACH" primaryHref="https://wa.me/919894466715?text=SEWCOACH" image="/assets/hero/hero-sewcoach.jpg" imageAlt="SewCoach sewing operator training room">
+    <SectionHero
+      eyebrow="SewCoach by Navvi"
+      title="Make new sewing operators line-ready in 8 days."
+      lead="Set up a scientific training room with certified trainers, ready-made courses, app-based tracking, OJT and certification."
+      primaryLabel="WhatsApp SEWCOACH"
+      primaryHref="https://wa.me/919894466715?text=SEWCOACH"
+      image="/assets/hero/hero-sewcoach.jpg"
+      imageAlt="SewCoach sewing operator training room"
+    >
       <a class="btn btn-outline" href="#programs">View programs</a>
     </SectionHero>
-    <section class="section"><div class="container split"><div><p class="eyebrow">Training school setup</p><h2>Without 30-day training delays.</h2><p class="muted">SewCoach is built for garment factories that need a repeatable way to hire, train and measure new sewing operators.</p><div class="proof-bar"><div class="proof-item"><strong>10+</strong><span>Factories served</span></div><div class="proof-item"><strong>18%</strong><span>Average efficiency gain</span></div><div class="proof-item"><strong>1,800+</strong><span>Operators trained</span></div><div class="proof-item"><strong>40%+</strong><span>Efficiency by Day 8 target</span></div></div></div><div class="media-frame"><img src="/assets/sewcoach/sewcoach-flyer.png" alt="SewCoach flyer showing training programs and app features" /></div></div></section>
-    <section class="section section-blue"><div class="container grid-2"><article class="card"><span class="kicker">Old way</span><h3>Training depends on people and paper.</h3><ul class="list"><li>30+ day training delay.</li><li>Paper tracking and weak visibility.</li><li>Trainer-dependent results.</li><li>Low operator efficiency at line entry.</li></ul></article><article class="card card-featured"><span class="kicker">SewCoach way</span><h3>Every trainee, cycle and skill is measured.</h3><ul class="list"><li>8-day structured training.</li><li>LMS courses ready to use.</li><li>OJT and training tracker.</li><li>Performance improvement and multi-skill certification.</li></ul></article></div></section>
-    <section class="section" id="programs"><div class="container"><div class="section-head"><p class="eyebrow">Two programs</p><h2>Built for garment factories.</h2></div><div class="grid-2"><article class="card card-featured"><span class="kicker">15 days</span><h3>ToT - Training of Trainers</h3><p class="muted">Build your own certified factory trainers so the system continues without Navvi being present every day.</p></article><article class="card card-featured"><span class="kicker">8 + 8 days</span><h3>GPOT - Great Performance Operator Training</h3><p class="muted">Make fresh hires line-ready faster with structured training, OJT and app-based tracking.</p></article></div></div></section>
+
+    <section class="section">
+      <div class="container split">
+        <div data-reveal>
+          <p class="eyebrow">Training school setup</p>
+          <h2>Replace 30-day training delays with measured skill building.</h2>
+          <p class="muted">SewCoach gives garment factories a repeatable hiring-to-line system — every trainee, cycle and skill checkpoint is visible.</p>
+          <div class="proof-bar">
+            <div class="proof-item"><strong>10+</strong><span>Factories served</span></div>
+            <div class="proof-item"><strong>18%</strong><span>Avg. efficiency gain</span></div>
+            <div class="proof-item"><strong>1,800+</strong><span>Operators trained</span></div>
+            <div class="proof-item"><strong>40%+</strong><span>Day 8 efficiency target</span></div>
+          </div>
+        </div>
+        <div class="media-frame" data-reveal>
+          <img src="/assets/sewcoach/sewcoach-flyer.png" alt="SewCoach training programs and app features" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue">
+      <div class="container grid-2" data-reveal-group>
+        <article class="card" data-reveal>
+          <span class="kicker">Old way</span>
+          <h3>Training depends on people and paper.</h3>
+          <ul class="list">
+            <li>30+ day training delay before useful output.</li>
+            <li>Paper registers without skill visibility.</li>
+            <li>Results change by trainer.</li>
+            <li>Supervisors lose time coaching one-by-one.</li>
+          </ul>
+        </article>
+        <article class="card card-featured" data-reveal>
+          <span class="kicker">SewCoach way</span>
+          <h3>Every trainee, cycle and skill is measured.</h3>
+          <ul class="list">
+            <li>8-day structured plan for fresh hires.</li>
+            <li>LMS courses ready to deploy.</li>
+            <li>App-based cycle timing and progress.</li>
+            <li>OJT gates before full line placement.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-warm" id="programs">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Programs</p>
+          <h2>Two tracks for factory capability.</h2>
+        </div>
+        <div class="grid-2" data-reveal-group>
+          <article class="card card-featured" data-reveal>
+            <span class="kicker">15 days</span>
+            <h3>ToT — Training of Trainers</h3>
+            <p class="muted">Build certified internal trainers, course delivery skill and certification discipline so training survives without external dependency.</p>
+          </article>
+          <article class="card card-featured" data-reveal>
+            <span class="kicker">8 + 8 days</span>
+            <h3>GPOT — Great Performance Operator Training</h3>
+            <p class="muted">Structured training plus OJT for fresh hires — line-ready focus with daily measurement and supervisor handover checklists.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">8-day rhythm</p>
+          <h2>What trainees cover in the first week.</h2>
+        </div>
+        <div class="grid-3" data-reveal-group>
+          <div class="card step" data-reveal><h3>Days 1–2</h3><p class="muted">Machine intro, safety, basic handling and foundation operations.</p></div>
+          <div class="card step" data-reveal><h3>Days 3–5</h3><p class="muted">Controlled operations, cycle timing, quality checkpoints.</p></div>
+          <div class="card step" data-reveal><h3>Days 6–8</h3><p class="muted">OJT preparation, readiness gate and supervised line entry.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ title="SewCoach FAQ" items={faq} />
+
+    <CTABlock
+      title="Set up your training room."
+      text="Message SEWCOACH on WhatsApp and we will discuss room layout, trainers and the right first program."
+      buttonLabel="WhatsApp SEWCOACH"
+      buttonHref="https://wa.me/919894466715?text=SEWCOACH"
+    />
   </main>
 </Layout>

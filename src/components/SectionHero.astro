@@ -9,13 +9,9 @@ const {
   imageAlt = ''
 } = Astro.props;
 ---
-<section
-  class:list={['page-hero', 'visual-band', image && 'page-hero--photo']}
-  style={image ? `--hero-image: url(${image})` : undefined}
->
-  {image && <div class="hero-photo-bg" aria-hidden="true"></div>}
-  <div class="container page-hero-inner">
-    <div class="page-hero-entrance">
+<section class="page-hero-block">
+  <div class="page-hero-copy visual-band">
+    <div class="container page-hero-entrance">
       <p class="eyebrow">{eyebrow}</p>
       <h1>{title}</h1>
       <p class="lead">{lead}</p>
@@ -24,10 +20,14 @@ const {
         <slot />
       </div>
     </div>
-    {image && (
-      <div class="page-hero-visual media-frame" data-reveal>
-        <img src={image} alt={imageAlt} loading="eager" />
-      </div>
-    )}
   </div>
+  {image && (
+    <div class="hero-banner" data-reveal>
+      <div class="container">
+        <div class="hero-banner-frame media-frame">
+          <img src={image} alt={imageAlt} loading="eager" width="1180" height="520" />
+        </div>
+      </div>
+    </div>
+  )}
 </section>

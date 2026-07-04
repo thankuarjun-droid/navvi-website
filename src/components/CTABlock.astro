@@ -1,0 +1,18 @@
+---
+const {
+  title,
+  text,
+  buttonLabel,
+  buttonHref,
+  tight = true
+} = Astro.props;
+---
+<section class:list={[tight ? 'section-tight' : 'section']}>
+  <div class="container cta-panel" data-reveal>
+    <div>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <a class="btn btn-secondary" href={buttonHref}>{buttonLabel}</a>
+  </div>
+</section>

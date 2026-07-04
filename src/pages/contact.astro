@@ -1,10 +1,70 @@
 ---
 import Layout from '../components/Layout.astro';
 import SectionHero from '../components/SectionHero.astro';
+import FAQ from '../components/FAQ.astro';
+
+const faq = [
+  { q: 'What is the fastest way to reach Navvi?', a: 'WhatsApp to +91 98944 66715. We use it for scheduling assessments, SewTrak demos and SewCoach discussions.' },
+  { q: 'What happens after I message?', a: 'We confirm factory context, suggest the right first step and schedule a call or floor visit where appropriate.' },
+  { q: 'Can I book online?', a: 'Yes, when the Google Calendar link is added in script.js. Until then, WhatsApp or the form below opens a pre-filled message.' },
+  { q: 'Do you visit outside Tamil Nadu?', a: 'Yes, for serious factory engagements. Geography and scope are confirmed in the first discussion.' }
+];
 ---
 <Layout title="Contact Navvi | Book Factory Assessment, SewCoach or SewTrak Demo">
   <main>
-    <SectionHero eyebrow="Book a discussion" title="Tell us what your factory needs." lead="Use WhatsApp for the fastest response. The form also opens WhatsApp with your details, so nothing gets lost." primaryLabel="Open WhatsApp" primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20discussion." image="/assets/hero/hero-blog.jpg" imageAlt="Discuss your factory needs with Navvi" />
-    <section class="section"><div class="container contact-grid"><aside class="card card-featured"><span class="kicker">Direct contact</span><h3>Navvi Corporations</h3><p><strong>Phone / WhatsApp:</strong><br /><a href="tel:+919894466715">+91 98944 66715</a></p><p><strong>Email:</strong><br /><a href="mailto:navvocorp@gmail.com">navvocorp@gmail.com</a></p><p><strong>Booking:</strong><br />Google Calendar booking link can be added inside <code>public/script.js</code>.</p><div class="section-actions"><a class="btn btn-primary" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20discussion.">Open WhatsApp</a><a class="btn btn-outline" data-booking-link href="#">Book online</a></div></aside><section class="card"><span class="kicker">Lead form</span><h3>Send details through WhatsApp</h3><form class="contact-form" data-lead-form><div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="Your name" /></div><div class="field"><label for="company">Company / factory</label><input id="company" name="company" required placeholder="Factory name" /></div><div class="field"><label for="interest">What do you want?</label><select id="interest" name="interest"><option>Free Factory Assessment</option><option>SewCoach Training School Setup</option><option>SewTrak Demo</option><option>Case Result Discussion</option></select></div><div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us your main problem."></textarea></div><button class="btn btn-secondary" type="submit">Send by WhatsApp</button></form></section></div></section>
+    <SectionHero
+      eyebrow="Book a discussion"
+      title="Tell us what your factory needs."
+      lead="Use WhatsApp for the fastest response. The form opens WhatsApp with your details so nothing gets lost."
+      primaryLabel="Open WhatsApp"
+      primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20discussion."
+      image="/assets/hero/hero-blog.jpg"
+      imageAlt="Discuss your factory needs with Navvi"
+    />
+
+    <section class="section">
+      <div class="container contact-grid">
+        <aside class="card card-featured" data-reveal>
+          <span class="kicker">Direct contact</span>
+          <h3>Navvi Corporations</h3>
+          <p><strong>Phone / WhatsApp:</strong><br /><a href="tel:+919894466715">+91 98944 66715</a></p>
+          <p><strong>Email:</strong><br /><a href="mailto:navvocorp@gmail.com">navvocorp@gmail.com</a></p>
+          <p><strong>Best for:</strong><br />Factory assessments, SewTrak demos, SewCoach setup and result discussions.</p>
+          <div class="section-actions">
+            <a class="btn btn-primary" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20discussion.">Open WhatsApp</a>
+            <a class="btn btn-outline" data-booking-link href="#">Book online</a>
+          </div>
+        </aside>
+        <section class="card" data-reveal>
+          <span class="kicker">Lead form</span>
+          <h3>Send details through WhatsApp</h3>
+          <form class="contact-form" data-lead-form>
+            <div class="field"><label for="name">Your name</label><input id="name" name="name" required placeholder="Your name" /></div>
+            <div class="field"><label for="company">Company / factory</label><input id="company" name="company" required placeholder="Factory name" /></div>
+            <div class="field">
+              <label for="interest">What do you want?</label>
+              <select id="interest" name="interest">
+                <option>Free Factory Assessment</option>
+                <option>SewCoach Training School Setup</option>
+                <option>SewTrak Demo</option>
+                <option>Case Result Discussion</option>
+              </select>
+            </div>
+            <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us your main problem."></textarea></div>
+            <button class="btn btn-secondary" type="submit">Send by WhatsApp</button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <div class="container grid-3" data-reveal-group>
+        <div class="card" data-reveal><span class="kicker">Step 1</span><h3>Share context</h3><p class="muted">Lines, product type and your biggest leak — quality, delivery, training or visibility.</p></div>
+        <div class="card" data-reveal><span class="kicker">Step 2</span><h3>Choose first move</h3><p class="muted">Assessment, SewCoach setup or SewTrak demo depending on where pain is clearest.</p></div>
+        <div class="card" data-reveal><span class="kicker">Step 3</span><h3>Schedule action</h3><p class="muted">We confirm on WhatsApp and agree the first on-floor or demo session.</p></div>
+      </div>
+    </section>
+
+    <FAQ title="Contact FAQ" items={faq} />
   </main>
 </Layout>

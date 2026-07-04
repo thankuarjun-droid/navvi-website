@@ -2,6 +2,15 @@
 import PageLayout from '../components/Layout.astro';
 import SectionHero from '../components/SectionHero.astro';
 import ScreenshotGallery from '../components/ScreenshotGallery.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faq = [
+  { q: 'Does SewTrak replace our ERP?', a: 'No. SewTrak focuses on garment planning, production tracking, HRIS views and KPI control. It can start alongside Excel or ERP data.' },
+  { q: 'How long does rollout take?', a: 'A demo workspace can be shown immediately. Pilot rollout on live lines often starts in 2–4 weeks depending on data readiness.' },
+  { q: 'Who uses SewTrak day to day?', a: 'Planners, supervisors, IE, production managers, quality, HR and owners — each with role-based screens.' },
+  { q: 'Can we buy SewTrak without transformation?', a: 'Yes. SewTrak is a standalone product when live visibility is the main bottleneck.' }
+];
 
 const screens = [
   {
@@ -105,14 +114,27 @@ const screens = [
       </div>
     </section>
 
-    <section class="section-tight">
-      <div class="container cta-panel" data-reveal>
-        <div>
-          <h2>Book a SewTrak demo.</h2>
-          <p>We will show the planner, production tracker and dashboard flow using a demo factory workspace.</p>
+    <section class="section section-warm">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Rollout path</p>
+          <h2>From demo to daily factory use.</h2>
         </div>
-        <a class="btn btn-secondary" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20SewTrak%20demo.">Request demo</a>
+        <div class="grid-3" data-reveal-group>
+          <div class="card step" data-reveal><h3>Demo</h3><p class="muted">Walk through dashboard, planning, production entry and HRIS in a live demo workspace.</p></div>
+          <div class="card step" data-reveal><h3>Pilot lines</h3><p class="muted">Configure styles, roles and boards for selected lines. Run parallel with existing tracking briefly.</p></div>
+          <div class="card step" data-reveal><h3>Factory rhythm</h3><p class="muted">Expand to more lines with 10 AM and 4 PM review using SewTrak as the control screen.</p></div>
+        </div>
       </div>
     </section>
+
+    <FAQ title="SewTrak FAQ" items={faq} />
+
+    <CTABlock
+      title="Book a SewTrak demo."
+      text="We show planner, tracker and dashboard flow in a working demo factory workspace."
+      buttonLabel="Request demo"
+      buttonHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20SewTrak%20demo."
+    />
   </main>
 </PageLayout>

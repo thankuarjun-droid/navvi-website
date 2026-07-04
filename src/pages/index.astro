@@ -2,6 +2,16 @@
 import Layout from '../components/Layout.astro';
 import FactoryAnimation from '../components/FactoryAnimation.astro';
 import CountUp from '../components/CountUp.astro';
+import ProfitCalculator from '../components/ProfitCalculator.astro';
+import TrustSignals from '../components/TrustSignals.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const homeFaq = [
+  { q: 'Do you show pricing on the website?', a: 'No. Factory size, leak depth and support needed decide scope. We discuss investment after the free assessment or product demo.' },
+  { q: 'Can we start with only SewCoach or SewTrak?', a: 'Yes. Many factories start with training or tracking first, then expand into full transformation when the rhythm is ready.' },
+  { q: 'How fast can we see change?', a: 'Most serious factories see directional movement in 2–4 weeks and stronger control by 90 days when daily review is installed.' }
+];
 ---
 <Layout
   title="Navvi Corporations | Factory Transformation, SewCoach and SewTrak"
@@ -9,16 +19,20 @@ import CountUp from '../components/CountUp.astro';
   ogImage="/assets/hero/hero-home.jpg"
 >
   <main>
-    <section class="hero hero--photo visual-band" style="--hero-image: url(/assets/hero/hero-home.jpg)">
-      <div class="hero-photo-bg" aria-hidden="true"></div>
-      <div class="container hero-grid">
+    <section class="hero visual-band">
+      <div class="container">
         <div class="hero-entrance">
           <p class="eyebrow">Garment factory transformation</p>
           <h1>Cut waste. Build systems. Boost profits.</h1>
           <p class="lead">Navvi helps garment manufacturers save ₹3-10 Cr annually, train line-ready operators, and track production live through SewCoach and SewTrak.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20free%20factory%20assessment.">WhatsApp Free Assessment</a>
-            <a class="btn btn-outline" href="/sewtrak/">See SewTrak</a>
+            <a class="btn btn-outline" href="#savings-calculator">Estimate savings</a>
+          </div>
+        </div>
+        <div class="hero-banner" data-reveal>
+          <div class="hero-banner-frame media-frame">
+            <img src="/assets/hero/hero-home.jpg" alt="Garment factory production floor with sewing lines" loading="eager" width="1180" height="520" />
           </div>
         </div>
         <div class="hero-panel">
@@ -44,6 +58,8 @@ import CountUp from '../components/CountUp.astro';
         </div>
       </div>
     </section>
+
+    <ProfitCalculator />
 
     <section class="section section-warm">
       <div class="container">
@@ -220,37 +236,15 @@ import CountUp from '../components/CountUp.astro';
       </div>
     </section>
 
-    <section class="section">
-      <div class="container grid-2">
-        <div data-reveal>
-          <p class="eyebrow">Common questions</p>
-          <h2>Simple answers before you call.</h2>
-        </div>
-        <div class="faq" data-reveal-group>
-          <details open data-reveal>
-            <summary>Do you show pricing on the website?</summary>
-            <p class="muted">No. Factory size, problem depth and support needed decide the engagement. We discuss scope after the first assessment or demo.</p>
-          </details>
-          <details data-reveal>
-            <summary>Can client names be shared?</summary>
-            <p class="muted">Not publicly. Many factories prefer confidentiality. We use anonymous case results online and discuss context in person where permitted.</p>
-          </details>
-          <details data-reveal>
-            <summary>Can we start only with SewCoach or SewTrak?</summary>
-            <p class="muted">Yes. You can start with training, tracking or full transformation depending on the current business pain.</p>
-          </details>
-        </div>
-      </div>
-    </section>
+    <TrustSignals />
 
-    <section class="section-tight">
-      <div class="container cta-panel" data-reveal>
-        <div>
-          <h2>Ready to find the leaks?</h2>
-          <p>Book a free factory assessment. We will confirm by WhatsApp and schedule the first discussion.</p>
-        </div>
-        <a class="btn btn-secondary" href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20free%20factory%20assessment.">Book on WhatsApp</a>
-      </div>
-    </section>
+    <FAQ title="Simple answers before you call." items={homeFaq} openFirst />
+
+    <CTABlock
+      title="Ready to find the leaks?"
+      text="Book a free factory assessment. We will confirm by WhatsApp and schedule the first discussion."
+      buttonLabel="Book on WhatsApp"
+      buttonHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20book%20a%20free%20factory%20assessment."
+    />
   </main>
 </Layout>

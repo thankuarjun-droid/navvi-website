@@ -1,0 +1,55 @@
+---
+---
+<section class="section section-mesh" id="savings-calculator">
+  <div class="container calculator-layout">
+    <div data-reveal>
+      <p class="eyebrow">Profit leak estimator</p>
+      <h2>Estimate your annual saving potential.</h2>
+      <p class="muted">A quick directional estimate based on turnover, line count and where leaks show up today. Final numbers are confirmed in the free factory assessment.</p>
+      <ul class="list calculator-notes">
+        <li>Uses typical garment-factory leak ranges, not guaranteed outcomes.</li>
+        <li>Stronger gaps in RFT and efficiency increase the estimate.</li>
+        <li>Share the result on WhatsApp to discuss your factory.</li>
+      </ul>
+    </div>
+    <div class="calculator-stack" data-reveal>
+      <form class="card calculator-form" data-profit-calculator>
+        <div class="field">
+          <label for="calc-turnover">Annual garment turnover (₹ Cr)</label>
+          <input id="calc-turnover" name="turnover" type="number" min="1" max="500" step="1" value="40" required />
+        </div>
+        <div class="field">
+          <label for="calc-lines">Active sewing lines</label>
+          <input id="calc-lines" name="lines" type="number" min="1" max="120" step="1" value="8" required />
+        </div>
+        <div class="field">
+          <label for="calc-rft">Current RFT (%)</label>
+          <input id="calc-rft" name="rft" type="range" min="70" max="99" value="88" />
+          <span class="range-value" data-rft-display>88%</span>
+        </div>
+        <div class="field">
+          <label for="calc-owe">Current line efficiency / OWE (%)</label>
+          <input id="calc-owe" name="owe" type="range" min="45" max="95" value="62" />
+          <span class="range-value" data-owe-display>62%</span>
+        </div>
+        <fieldset class="calculator-leaks">
+          <legend>Where do you see leaks today?</legend>
+          <label><input type="checkbox" name="leak" value="rework" checked /> Rework &amp; quality loss</label>
+          <label><input type="checkbox" name="leak" value="efficiency" checked /> Low efficiency / line balance</label>
+          <label><input type="checkbox" name="leak" value="delay" /> Delivery delay &amp; OTIF risk</label>
+          <label><input type="checkbox" name="leak" value="training" /> Slow operator ramp-up</label>
+          <label><input type="checkbox" name="leak" value="fabric" /> Fabric &amp; cutting loss</label>
+          <label><input type="checkbox" name="leak" value="cash" /> Cash cycle &amp; WIP trap</label>
+          <label><input type="checkbox" name="leak" value="visibility" /> No live production visibility</label>
+        </fieldset>
+        <button class="btn btn-secondary" type="button" data-calc-run>Calculate estimate</button>
+      </form>
+      <div class="card card-featured calculator-result" data-calculator-result>
+        <span class="kicker">Estimated range</span>
+        <p class="calculator-output" data-calc-output>₹1.2 – ₹3.8 Cr / year</p>
+        <p class="muted" data-calc-detail>Select your leaks and click calculate. This is an indicative range for discussion — not a quote.</p>
+        <a class="btn btn-primary" data-calc-whatsapp href="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20used%20your%20profit%20leak%20estimator%20and%20want%20to%20discuss%20my%20factory.">Discuss on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>

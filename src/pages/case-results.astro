@@ -1,10 +1,80 @@
 ---
 import Layout from '../components/Layout.astro';
 import SectionHero from '../components/SectionHero.astro';
+import CTABlock from '../components/CTABlock.astro';
 ---
-<Layout title="Anonymous Factory Results | Navvi Corporations">
+<Layout title="Anonymous Factory Results | Navvi Corporations" description="Anonymous garment factory transformation results: throughput, OTIF, savings and ROI from Navvi work.">
   <main>
-    <SectionHero eyebrow="Results without public client names" title="Anonymous factory results. Client names shared in person where permitted." lead="Many garment factories hesitate to publish operational data. We respect that. The results below are framed anonymously for public viewing." primaryLabel="Discuss results" primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20discuss%20your%20anonymous%20factory%20results." image="/assets/hero/hero-factory.jpg" imageAlt="Factory performance improvement results" />
-    <section class="section"><div class="container grid-3"><article class="card card-featured"><span class="kicker">12-line knitwear exporter</span><h3>Throughput and delivery improvement</h3><p class="muted">The factory needed better production rhythm, stronger supervisor control and faster order movement.</p><div class="case-stat"><div><strong>+25%</strong><span>Throughput</span></div><div><strong>₹3.2 Cr</strong><span>Yearly savings</span></div><div><strong>90 days</strong><span>Initial turnaround</span></div></div></article><article class="card card-featured"><span class="kicker">Export unit</span><h3>Hiring, engagement and OTIF control</h3><p class="muted">The factory had bad hires, low engagement and inconsistent delivery performance.</p><div class="case-stat"><div><strong>95%</strong><span>OTIF</span></div><div><strong>₹3.8 Cr</strong><span>Savings</span></div><div><strong>-60%</strong><span>Bad hires</span></div></div></article><article class="card card-featured"><span class="kicker">Garment plant</span><h3>Operational loss reduction</h3><p class="muted">The factory was losing margin through process gaps, waste and poor visibility.</p><div class="case-stat"><div><strong>-85%</strong><span>Loss reduction</span></div><div><strong>400-500%</strong><span>ROI</span></div><div><strong>₹1.5 Cr</strong><span>Annual savings</span></div></div></article></div></section>
+    <SectionHero
+      eyebrow="Results without public client names"
+      title="Anonymous factory results."
+      lead="Many garment factories prefer confidentiality. We publish framed outcomes online and share client context in person where permitted."
+      primaryLabel="Discuss results"
+      primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20to%20discuss%20your%20anonymous%20factory%20results."
+      image="/assets/hero/hero-factory.jpg"
+      imageAlt="Factory performance improvement results"
+    />
+
+    <section class="section">
+      <div class="container grid-3" data-reveal-group>
+        <article class="card card-featured" data-reveal>
+          <span class="kicker">12-line knitwear exporter</span>
+          <h3>Throughput and delivery improvement</h3>
+          <p class="muted">Needed stronger production rhythm, supervisor control and faster order movement across knitting and sewing links.</p>
+          <div class="case-stat">
+            <div><strong>+25%</strong><span>Throughput</span></div>
+            <div><strong>₹3.2 Cr</strong><span>Yearly savings</span></div>
+            <div><strong>90 days</strong><span>Turnaround</span></div>
+          </div>
+        </article>
+        <article class="card card-featured" data-reveal>
+          <span class="kicker">Export unit</span>
+          <h3>Hiring, engagement and OTIF control</h3>
+          <p class="muted">Bad hires, weak engagement and inconsistent delivery were hurting buyer trust and supervisor morale.</p>
+          <div class="case-stat">
+            <div><strong>95%</strong><span>OTIF</span></div>
+            <div><strong>₹3.8 Cr</strong><span>Savings</span></div>
+            <div><strong>-60%</strong><span>Bad hires</span></div>
+          </div>
+        </article>
+        <article class="card card-featured" data-reveal>
+          <span class="kicker">Garment plant</span>
+          <h3>Operational loss reduction</h3>
+          <p class="muted">Margin was leaking through process gaps, waste and poor visibility between cutting, sewing and finishing.</p>
+          <div class="case-stat">
+            <div><strong>-85%</strong><span>Loss reduction</span></div>
+            <div><strong>400%+</strong><span>ROI</span></div>
+            <div><strong>₹1.5 Cr</strong><span>Annual savings</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-warm">
+      <div class="container split">
+        <div data-reveal>
+          <p class="eyebrow">How we report results</p>
+          <h2>Directional proof without breaking confidentiality.</h2>
+          <p class="muted">We share enough for a factory owner to see relevance — scale, problem type and outcome direction — without naming buyers or factories publicly.</p>
+        </div>
+        <div class="card" data-reveal>
+          <h3>In a private discussion we can cover</h3>
+          <ul class="list">
+            <li>Starting baseline and leak map.</li>
+            <li>Which KPIs moved first.</li>
+            <li>What was installed on the floor.</li>
+            <li>Whether SewCoach or SewTrak was part of the path.</li>
+            <li>What the factory still runs internally today.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <CTABlock
+      title="See if your factory fits this pattern."
+      text="Share your line count and main leak. We will tell you honestly if Navvi is a fit."
+      buttonLabel="Talk to Navvi"
+      buttonHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20reviewed%20your%20case%20results%20and%20want%20to%20discuss%20my%20factory."
+    />
   </main>
 </Layout>

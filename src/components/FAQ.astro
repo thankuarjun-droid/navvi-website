@@ -1,0 +1,29 @@
+---
+interface Item {
+  q: string;
+  a: string;
+}
+
+const { title = 'Common questions', eyebrow = 'FAQ', items = [], openFirst = false } = Astro.props as {
+  title?: string;
+  eyebrow?: string;
+  items: Item[];
+  openFirst?: boolean;
+};
+---
+<section class="section">
+  <div class="container grid-2">
+    <div data-reveal>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+    </div>
+    <div class="faq" data-reveal-group>
+      {items.map((item, index) => (
+        <details data-reveal open={openFirst && index === 0}>
+          <summary>{item.q}</summary>
+          <p class="muted">{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

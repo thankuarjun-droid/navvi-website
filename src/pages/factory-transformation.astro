@@ -1,14 +1,105 @@
 ---
 import Layout from '../components/Layout.astro';
 import SectionHero from '../components/SectionHero.astro';
+import FAQ from '../components/FAQ.astro';
+import CTABlock from '../components/CTABlock.astro';
+
+const faq = [
+  { q: 'What happens in the free assessment?', a: 'We walk the floor, review baseline KPIs, map loss areas and give you a ranked improvement sketch with a 90-day action outline.' },
+  { q: 'Do you work inside our factory?', a: 'Yes. Navvi installs rhythm on the shop floor — line balance, quality gates, dashboards and supervisor routines — not only boardroom advice.' },
+  { q: 'Can Navvi support interim staff?', a: 'Where needed, we can support fabric follow-up, merchandising, QC, supervision and dashboard setup during the sprint.' },
+  { q: 'How is ROI discussed?', a: 'We agree risk-reversal terms and measurable KPI targets before scaling. Anonymous results are shared online; names only in person when permitted.' }
+];
 ---
 <Layout title="Factory Transformation | Navvi Corporations" description="Save ₹3-10 Cr annually with Navvi factory transformation: assessment, 90-day sprint, KPI dashboards and on-floor execution for garment manufacturers.">
   <main>
-    <SectionHero eyebrow="Factory transformation" title="Save ₹3-10 Cr annually by fixing quality, efficiency, delay and cash leaks." lead="Navvi combines consulting, implementation staff, KPI dashboards, training and daily control. We work on the factory floor, not only in presentations." primaryLabel="Book free assessment" primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20free%20factory%20assessment." image="/assets/hero/hero-factory.jpg" imageAlt="Factory transformation team on the production floor">
+    <SectionHero
+      eyebrow="Factory transformation"
+      title="Save ₹3-10 Cr annually by fixing quality, efficiency, delay and cash leaks."
+      lead="Navvi combines consulting, implementation staff, KPI dashboards, training and daily control. We work on the factory floor, not only in presentations."
+      primaryLabel="Book free assessment"
+      primaryHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20free%20factory%20assessment."
+      image="/assets/hero/hero-factory.jpg"
+      imageAlt="Factory transformation team on the production floor"
+    >
       <a class="btn btn-outline" href="/case-results/">View results</a>
     </SectionHero>
-    <section class="section"><div class="container grid-3" data-reveal-group><article class="card card-featured" data-reveal><span class="kicker">Free audit</span><h3>Factory assessment</h3><p class="muted">Walk-through, KPI gap map, improvement opportunity list and 90-day action sketch.</p></article><article class="card"><span class="kicker">Pilot</span><h3>1-week implementation sprint</h3><p class="muted">On-floor quick wins with supervisors and short-term support where your team needs help.</p></article><article class="card"><span class="kicker">90 days</span><h3>Transformation sprint</h3><p class="muted">Line balance, zero-defect gates, flow redesign, scheduler, dashboards and owner review rhythm.</p></article></div></section>
-    <section class="section section-blue visual-band"><div class="container"><div class="section-head"><p class="eyebrow">KPI focus</p><h2>Numbers we improve.</h2></div><div class="grid-3"><div class="card card-blue"><h3>Quality</h3><p>Right First Time, DHU, returns and defect recurrence.</p></div><div class="card card-blue"><h3>Efficiency</h3><p>OWE, SAM control, line balance, output per head and cost per minute.</p></div><div class="card card-blue"><h3>Delivery</h3><p>OTIF, order lead time, plan adherence and dispatch readiness.</p></div><div class="card card-blue"><h3>Cash</h3><p>CCC, inventory days, fabric utilization and process loss.</p></div><div class="card card-blue"><h3>People</h3><p>Absenteeism, attrition, engagement, skill matrix and training readiness.</p></div><div class="card card-blue"><h3>Systems</h3><p>Power BI dashboards, no-code data capture, SOPs and review routines.</p></div></div></div></section>
-    <section class="section"><div class="container split"><div><p class="eyebrow">Support system</p><h2>Not just advice. We fill execution gaps.</h2><p class="muted">If the factory does not have the right staff ready, Navvi can support implementation with fabric follow-up, junior merchandising, quality control, supervision and dashboard setup.</p></div><div class="card"><h3>What comes with the sprint</h3><ul class="list"><li>Loss tree and ranked action plan.</li><li>Dashboard starter from ERP, Excel or no-code capture.</li><li>Line balance and daily review rhythm.</li><li>SOP mini-pack and supervisor training.</li><li>Risk reversal terms agreed before engagement.</li></ul></div></div></section>
+
+    <section class="section section-warm">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">Engagement path</p>
+          <h2>From assessment to sustained control.</h2>
+        </div>
+        <div class="grid-3" data-reveal-group>
+          <article class="card card-featured" data-reveal>
+            <span class="kicker">Week 1</span>
+            <h3>Factory assessment</h3>
+            <p class="muted">Walk-through, KPI gap map, loss tree, improvement opportunities and a 90-day action sketch — free for eligible factories.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="kicker">Week 2–3</span>
+            <h3>Implementation sprint</h3>
+            <p class="muted">On-floor quick wins with supervisors, line trials, dashboard starter and short-term support where your team needs help.</p>
+          </article>
+          <article class="card" data-reveal>
+            <span class="kicker">90 days</span>
+            <h3>Transformation sprint</h3>
+            <p class="muted">Line balance, zero-defect gates, flow redesign, scheduler rhythm, owner review cadence and internal owner training.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div data-reveal>
+          <p class="eyebrow">Who this is for</p>
+          <h2>Owners who are tired of reports without floor change.</h2>
+          <p class="muted">Best fit: export or domestic garment factories with recurring rework, weak OTIF, fabric loss, training delay or no live control.</p>
+          <ul class="list">
+            <li>12+ lines or multi-unit operations seeing margin pressure.</li>
+            <li>Leadership wants daily numbers, not month-end surprises.</li>
+            <li>Teams are willing to run a 10 AM review rhythm.</li>
+          </ul>
+        </div>
+        <div class="card card-featured" data-reveal>
+          <h3>What you receive</h3>
+          <ul class="list">
+            <li>Loss tree and ranked action plan.</li>
+            <li>Dashboard starter from ERP, Excel or no-code capture.</li>
+            <li>SOP mini-pack and supervisor coaching.</li>
+            <li>Daily KPI review design with named owners.</li>
+            <li>Optional SewCoach / SewTrak path when people or data are the bottleneck.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-blue visual-band">
+      <div class="container">
+        <div class="section-head" data-reveal>
+          <p class="eyebrow">KPI focus</p>
+          <h2>Numbers we move in transformation work.</h2>
+        </div>
+        <div class="grid-3" data-reveal-group>
+          <div class="card card-blue" data-reveal><h3>Quality</h3><p>RFT, DHU, returns and defect recurrence.</p></div>
+          <div class="card card-blue" data-reveal><h3>Efficiency</h3><p>OWE, SAM control, line balance and output per head.</p></div>
+          <div class="card card-blue" data-reveal><h3>Delivery</h3><p>OTIF, lead time, plan adherence and dispatch readiness.</p></div>
+          <div class="card card-blue" data-reveal><h3>Cash</h3><p>CCC, inventory days, fabric utilization and process loss.</p></div>
+          <div class="card card-blue" data-reveal><h3>People</h3><p>Absenteeism, attrition, skill matrix and training readiness.</p></div>
+          <div class="card card-blue" data-reveal><h3>Systems</h3><p>Dashboards, data capture, SOPs and review routines.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ title="Factory transformation FAQ" items={faq} />
+
+    <CTABlock
+      title="Book your free assessment."
+      text="Five assessment slots per month for factories ready to act. We confirm by WhatsApp."
+      buttonLabel="WhatsApp assessment"
+      buttonHref="https://wa.me/919894466715?text=Hello%20Navvi%2C%20I%20want%20a%20free%20factory%20assessment."
+    />
   </main>
 </Layout>

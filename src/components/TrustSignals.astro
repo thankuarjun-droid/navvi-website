@@ -1,0 +1,33 @@
+---
+const signals = [
+  ['10+', 'Factories supported across transformation and training'],
+  ['1,800+', 'Operators trained through SewCoach-style programs'],
+  ['90 days', 'Typical window for first measurable turnaround'],
+  ['Live demo', 'SewTrak shown in a working factory workspace']
+];
+---
+<section class="section section-warm">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <p class="eyebrow">Why factories trust Navvi</p>
+      <h2>Execution on the floor. Not slides alone.</h2>
+      <p class="muted">Navvi works inside garment factories — assessments, training rooms, dashboards and daily review rhythms — with confidentiality respected.</p>
+    </div>
+    <div class="trust-grid" data-reveal-group>
+      {signals.map(([value, label]) => (
+        <div class="trust-item card" data-reveal>
+          <strong>{value}</strong>
+          <span>{label}</span>
+        </div>
+      ))}
+    </div>
+    <div class="trust-points card" data-reveal>
+      <ul class="list">
+        <li>Free factory assessment before any major engagement.</li>
+        <li>Anonymous case framing online; client names only in person when permitted.</li>
+        <li>Start with transformation, SewCoach or SewTrak — not forced bundles.</li>
+        <li>WhatsApp-first response for owners who need fast scheduling.</li>
+      </ul>
+    </div>
+  </div>
+</section>
