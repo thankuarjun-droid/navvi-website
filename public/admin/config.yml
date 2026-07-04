@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: uarjun-droid/navvi-website
+  repo: thankuarjun-droid/navvi-website
   branch: main
 
 local_backend: true
