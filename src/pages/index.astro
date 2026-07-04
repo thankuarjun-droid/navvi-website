@@ -6,9 +6,11 @@ import CountUp from '../components/CountUp.astro';
 <Layout
   title="Navvi Corporations | Factory Transformation, SewCoach and SewTrak"
   description="Navvi helps garment manufacturers cut waste, build systems and boost profits with factory transformation, SewCoach training and SewTrak production tracking."
+  ogImage="/assets/hero/hero-home.jpg"
 >
   <main>
-    <section class="hero visual-band">
+    <section class="hero hero--photo visual-band" style="--hero-image: url(/assets/hero/hero-home.jpg)">
+      <div class="hero-photo-bg" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-entrance">
           <p class="eyebrow">Garment factory transformation</p>
@@ -43,7 +45,7 @@ import CountUp from '../components/CountUp.astro';
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-warm">
       <div class="container">
         <div class="section-head" data-reveal>
           <p class="eyebrow">Three connected offers</p>
@@ -51,7 +53,10 @@ import CountUp from '../components/CountUp.astro';
           <p class="muted">Use Navvi for full transformation, SewCoach for operator training systems, and SewTrak for planning, tracking and production control.</p>
         </div>
         <div class="grid-3" data-reveal-group>
-          <article class="card card-featured" data-reveal>
+          <article class="card card-featured card-visual card-visual--navy" data-reveal>
+            <div class="card-visual-image media-frame">
+              <img src="/assets/hero/hero-factory.jpg" alt="Factory transformation on the shop floor" loading="lazy" />
+            </div>
             <span class="kicker">Transformation</span>
             <h3>Factory profit system</h3>
             <p class="muted">Free assessment, 90-day sprint, interim staff support, KPI dashboards, SOPs and execution on the shop floor.</p>
@@ -62,7 +67,10 @@ import CountUp from '../components/CountUp.astro';
             </ul>
             <p><a class="btn btn-outline" href="/factory-transformation/">Explore transformation</a></p>
           </article>
-          <article class="card" data-reveal>
+          <article class="card card-visual card-visual--amber" data-reveal>
+            <div class="card-visual-image media-frame">
+              <img src="/assets/hero/hero-sewcoach.jpg" alt="SewCoach operator training room" loading="lazy" />
+            </div>
             <span class="kicker">Training</span>
             <h3>SewCoach</h3>
             <p class="muted">Set up a scientific sewing operator training room with certified trainers, LMS courses, OJT tracking and certification.</p>
@@ -73,7 +81,10 @@ import CountUp from '../components/CountUp.astro';
             </ul>
             <p><a class="btn btn-outline" href="/sewcoach/">Explore SewCoach</a></p>
           </article>
-          <article class="card" data-reveal>
+          <article class="card card-visual card-visual--teal" data-reveal>
+            <div class="card-visual-image media-frame">
+              <img src="/assets/hero/hero-sewtrak.jpg" alt="SewTrak production tracking workspace" loading="lazy" />
+            </div>
             <span class="kicker">Tracking</span>
             <h3>SewTrak</h3>
             <p class="muted">A garment resource planner and production tracker for live planning, production entry, KPIs, HRIS and OTIF control.</p>
@@ -106,7 +117,7 @@ import CountUp from '../components/CountUp.astro';
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-mesh">
       <div class="container">
         <div class="proof-bar" data-reveal-group>
           <div class="proof-item" data-reveal>

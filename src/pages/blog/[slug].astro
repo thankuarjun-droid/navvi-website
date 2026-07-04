@@ -17,7 +17,11 @@ const formattedDate = post.data.publishDate.toLocaleDateString('en-IN', {
 ---
 <Layout title={`${post.data.title} | Navvi Blog`} description={post.data.description} ogImage={post.data.image}>
   <main>
-    <section class="blog-hero visual-band">
+    <section
+      class:list={['blog-hero', 'visual-band', post.data.image && 'blog-hero--photo']}
+      style={post.data.image ? `--hero-image: url(${post.data.image})` : undefined}
+    >
+      {post.data.image && <div class="hero-photo-bg" aria-hidden="true"></div>}
       <div class="container blog-hero-grid">
         <div class="page-hero-entrance">
           <p class="eyebrow">{post.data.category}</p>
