@@ -175,6 +175,55 @@ If Git deploy is not available:
 
 ---
 
+## Fix 403 Forbidden
+
+A **403** almost always means Hostinger is not serving the built site from the right folder.
+
+### Check these in Hostinger Git deploy
+
+| Setting | Must be |
+|---------|---------|
+| Build command | `npm run build` |
+| Output / publish directory | `dist` |
+| Node version | 22 |
+
+The web root (`public_html`) must contain **`index.html` directly inside it** — not inside a `dist` subfolder.
+
+Correct `public_html` layout:
+
+```
+public_html/
+  index.html
+  styles.css
+  script.js
+  assets/
+  blog/
+  ...
+```
+
+Wrong (causes 403):
+
+```
+public_html/
+  dist/
+    index.html   ← site is buried; domain root has no index
+```
+
+### Manual fix in File Manager
+
+1. hPanel → **File Manager** → `public_html`
+2. Delete old files (backup first if needed)
+3. On your PC run `npm run build`
+4. Upload **everything inside** `navvi-astro-cms/dist/` into `public_html`
+5. Confirm `public_html/index.html` exists
+6. Set folder permissions to **755**, files to **644** if needed
+
+### After fix
+
+Visit https://navvicorp.com — you should see the homepage, not 403.
+
+---
+
 ## Troubleshooting
 
 **Build fails on Hostinger**
