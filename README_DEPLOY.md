@@ -55,11 +55,11 @@ git add .
 git commit -m "Navvi animated website with blog and SewTrak gallery"
 
 git branch -M main
-git remote add origin https://github.com/YOUR_GITHUB_USERNAME/navvi-website.git
+git remote add origin https://github.com/thankuarjun-droid/navvi-website.git
 git push -u origin main
 ```
 
-Replace `YOUR_GITHUB_USERNAME` with your real GitHub username.
+Your GitHub username is **thankuarjun-droid**.
 
 If Git asks you to sign in, use a **Personal Access Token** (not your password):
 
@@ -111,7 +111,7 @@ Decap CMS lives at `/admin/`. Before it works:
 2. Replace:
 
 ```yaml
-repo: YOUR_GITHUB_USERNAME/YOUR_NAVVI_REPO
+repo: thankuarjun-droid/navvi-website
 ```
 
 with your real repo, e.g.:
